@@ -40,61 +40,62 @@ function App() {
 
   return (
     <div className="App">
-      <div className='main'>
-
-      <div className="search">
-        <input
-          value={location}
-          placeholder="Search Location"
-          type="text"
-          onChange={(e) => setLocation(e.target.value)}
-          onKeyPress={search}
-        />
-      </div>
-      <div className="container">
-        <div className="text">
-          <div className="location">
-            {weather.name ? <p>{weather.name}</p> : null}
+      <div className="main">
+        <div className="container">
+          <div className="text">
+            <div className="location">
+              {weather.name ? <p>{weather.name}</p> : null}
+            </div>
+            <div className="date">
+              <p>{dateGetter(new Date())}</p>
+            </div>
+            <div className="search">
+              <input
+              className='input'
+                value={location}
+                placeholder="Search Location"
+                type="text"
+                onChange={(e) => setLocation(e.target.value)}
+                onKeyPress={search}
+              />
+            </div>
           </div>
-          <div className="date">
-            <p>{dateGetter(new Date())}</p>
-          </div>
-        </div>
-        <div className="widget">
-          <div className="temp">
-            {weather.main ? (
-              <p>{(((weather.main.temp - 32) * 5) / 9).toFixed()}°C</p>
-            ) : null}
-          </div>
-          <div>
-            <div className="icon"></div>
-            <div className="description">
-              {weather.weather ? (
-                <p> {weather.weather[0].description}</p>
+          <div className="widget">
+            <div className="temp">
+              {weather.main ? (
+                <p>{(((weather.main.temp - 32) * 5) / 9).toFixed()}°C</p>
               ) : null}
+            </div>
+            <div>
+              <div className="icon"></div>
+              <div className="description">
+                {weather.weather ? (
+                  <p> {weather.weather[0].description}</p>
+                ) : null}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div className="extras">
-        <div className="feels">
-          {weather.main ? (
-            <p>
-              Feels Like: {(((weather.main.feels_like - 32) * 5) / 9).toFixed()}°C
-            </p>
-          ) : null}
-        </div>
-        <div className="humidity">
-          {weather.main ? <p>Humidity: {weather.main.humidity}%</p> : null}
-        </div>
-        <div className="wind">
-          {weather.wind ? (
-            <p>Wind: {weather.wind.speed.toFixed()} MPH</p>
-          ) : null}
+        <div className="extras">
+          <div className="feels">
+            {weather.main ? (
+              <p>
+                Feels Like:{" "}
+                {(((weather.main.feels_like - 32) * 5) / 9).toFixed()}°C
+              </p>
+            ) : null}
+          </div>
+          <div className="humidity">
+            {weather.main ? <p>Humidity: {weather.main.humidity}%</p> : null}
+          </div>
+          <div className="wind">
+            {weather.wind ? (
+              <p>Wind: {weather.wind.speed.toFixed()} MPH</p>
+            ) : null}
+          </div>
         </div>
       </div>
     </div>
-      </div>
   );
 } 
 

@@ -126,3 +126,25 @@
   text-align: center;
   box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
 }
+
+.search { 
+  padding-top: 3%;
+}
+
+.App input {
+  padding: .7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255, 0.8);
+  background: rgba(255,255,255, 0.1);
+  color: #f8f8f8;
+}
+
+::placeholder {
+  color: #f8f8f8;
+}
+
+
+::placeholder {
+  color: #f8f8f8;
+}
