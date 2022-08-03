@@ -16,6 +16,7 @@ function App() {
     if(e.key === "Enter") {
       axios.get(api).then((res)=> {
         setWeather(res.data)
+        setLocation('')
         console.log(res.data)
       })
     }
