@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import axios from 'axios'
 import './App.css';
 
+
 function App() {
 
   // USE STATE VARIABLES
   const [weather, setWeather] = useState({});
-  const [location, setLocation] = useState('')
+  const [location, setLocation] = useState('');
+  const [temp, setTemp] = useState(56)
 
   //API
   const api =`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=0be1143e55cbb02debda50a86cce2e12`;
@@ -17,7 +19,8 @@ function App() {
       axios.get(api).then((res)=> {
         setWeather(res.data)
         setLocation('')
-        console.log(res.data)
+        setTemp(res.data.main.temp)
+        console.log(res.data.main.temp)
       })
     }
   }
@@ -36,10 +39,11 @@ function App() {
 
     return `${day}, ${month}, ${date}, ${year}`;
   }
+  console.log("temp", temp)
 
 
   return (
-    <div className="App">
+    <div className={`App${temp < 58 ? "-cold" : ""}`}>
       <div className="main">
         <div className="container">
           <div className="text">
@@ -51,7 +55,7 @@ function App() {
             </div>
             <div className="search">
               <input
-              className='input'
+                className="input"
                 value={location}
                 placeholder="Search Location"
                 type="text"

@@ -5,14 +5,15 @@
 }
 
 .App {
+  background: url('./sky.jpg');
+  background-size: cover;
+  background-position: bottom;
+}
+
+.App-cold {
   background: url('./mountains.jpg');
   background-size: cover;
   background-position: bottom;
-
-}
-
-.App.warm {
-  background: url('./sky.jpg');
 }
 
 .main {
@@ -92,7 +93,7 @@
   font-size: 30px;
   font-weight: 900;
 
-  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  text-shadow: 2px 4px rgba(50, 50, 70, 0.5);
   text-align: center;
   box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
 }
@@ -107,7 +108,7 @@
   font-size: 30px;
   font-weight: 900;
 
-  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  text-shadow: 2px 4px rgba(50, 50, 70, 0.5);
   text-align: center;
   box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
 }
@@ -122,7 +123,7 @@
   font-size: 30px;
   font-weight: 900;
 
-  text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+  text-shadow: 2px 4px rgba(50, 50, 70, 0.5);
   text-align: center;
   box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
 }
@@ -139,11 +140,6 @@
   background: rgba(255,255,255, 0.1);
   color: #f8f8f8;
 }
-
-::placeholder {
-  color: #f8f8f8;
-}
-
 
 ::placeholder {
   color: #f8f8f8;
