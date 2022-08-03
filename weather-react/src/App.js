@@ -60,7 +60,9 @@ function App() {
         </div>
         <div className="widget">
           <div className="temp">
-            {weather.main ? <p>{weather.main.temp}</p> : null}
+            {weather.main ? (
+              <p>{(((weather.main.temp - 32) * 5) / 9).toFixed()}°C</p>
+            ) : null}
           </div>
           <div>
             <div className="icon"></div>
@@ -74,13 +76,19 @@ function App() {
       </div>
       <div className="extras">
         <div className="feels">
-          {weather.main ? <p> {weather.main.feels_like}</p> : null}
+          {weather.main ? (
+            <p>
+              Feels Like: {(((weather.main.feels_like - 32) * 5) / 9).toFixed()}°C
+            </p>
+          ) : null}
         </div>
         <div className="humidity">
-          {weather.main ? <p> {weather.main.humidity}</p> : null}
+          {weather.main ? <p>Humidity: {weather.main.humidity}%</p> : null}
         </div>
         <div className="wind">
-          {weather.wind ? <p> {weather.wind.speed}</p> : null}
+          {weather.wind ? (
+            <p>Wind: {weather.wind.speed.toFixed()} MPH</p>
+          ) : null}
         </div>
       </div>
     </div>
