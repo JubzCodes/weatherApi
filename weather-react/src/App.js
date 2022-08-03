@@ -4,11 +4,11 @@ import './App.css';
 
 function App() {
 
-// USE STATE VARIABLES
+  // USE STATE VARIABLES
   const [weather, setWeather] = useState({});
   const [location, setLocation] = useState('')
 
-//API
+  //API
   const api =`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=0be1143e55cbb02debda50a86cce2e12`;
 
   //SEARCH FUNCTION
@@ -20,6 +20,21 @@ function App() {
         console.log(res.data)
       })
     }
+  }
+
+  //DATE FUNCTION
+  const dateGetter = (num) => {
+
+    const months = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]; 
+    const days = ["Sunday", "Monday", "Tuesday", "Wendesday", "Thrusday", "Friday", "Saturday"];
+
+    // using number from newdate function call to display specific date from day & month arrays
+    const day = days[num.getDay()]; 
+    const date = num.getDate();
+    const month = months[num.getMonth()];
+    const year = num.getFullYear();
+
+    return `${day}, ${month}, ${date}, ${year}`;
   }
 
 
@@ -39,7 +54,9 @@ function App() {
           <div className="location">
             {weather.name ? <p>{weather.name}</p> : null}
           </div>
-          <div className="date"></div>
+          <div className="date">
+            <p>{dateGetter(new Date())}</p>
+          </div>
         </div>
         <div className="widget">
           <div className="temp">
