@@ -13,8 +13,8 @@ function App() {
 
   //SEARCH FUNCTION
   const search = (e) => {
-    if(e.key == "enter") {
-      axios.get(url).then((res)=> {
+    if(e.key === "Enter") {
+      axios.get(api).then((res)=> {
         setWeather(res.data)
         console.log(res.data)
       })
@@ -25,7 +25,13 @@ function App() {
   return (
     <div className="App">
       <div className="search">
-        <input />
+        <input 
+        value={location}
+        placeholder = "Search Location"
+        type="text"
+        onChange={e => setLocation(e.target.value)}
+        onKeyPress={search}
+        />
       </div>
       <div className="container">
         <div className="text">
