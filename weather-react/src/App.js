@@ -40,6 +40,8 @@ function App() {
 
   return (
     <div className="App">
+      <div className='main'>
+
       <div className="search">
         <input
           value={location}
@@ -92,7 +94,8 @@ function App() {
         </div>
       </div>
     </div>
+      </div>
   );
-}
+} 
 
 export default App;
