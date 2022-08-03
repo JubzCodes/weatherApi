@@ -3,10 +3,23 @@ import axios from 'axios'
 import './App.css';
 
 function App() {
-  
+
+// USE STATE VARIABLES
   const [weather, setWeather] = useState({});
   const [location, setLocation] = useState('')
+
+//API
   const api =`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=0be1143e55cbb02debda50a86cce2e12`;
+
+  //SEARCH FUNCTION
+  const search = (e) => {
+    if(e.key == "enter") {
+      axios.get(url).then((res)=> {
+        setWeather(res.data)
+        console.log(res.data)
+      })
+    }
+  }
 
 
   return (
