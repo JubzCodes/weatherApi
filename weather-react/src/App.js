@@ -26,31 +26,45 @@ function App() {
   return (
     <div className="App">
       <div className="search">
-        <input 
-        value={location}
-        placeholder = "Search Location"
-        type="text"
-        onChange={e => setLocation(e.target.value)}
-        onKeyPress={search}
+        <input
+          value={location}
+          placeholder="Search Location"
+          type="text"
+          onChange={(e) => setLocation(e.target.value)}
+          onKeyPress={search}
         />
       </div>
       <div className="container">
         <div className="text">
-          <div className="location"></div>
+          <div className="location">
+            {weather.name ? <p>{weather.name}</p> : null}
+          </div>
           <div className="date"></div>
         </div>
         <div className="widget">
-          <div className="temp"></div>
+          <div className="temp">
+            {weather.main ? <p>{weather.main.temp}</p> : null}
+          </div>
           <div>
-            <div className='icon'></div>
-            <div className='description'></div>
+            <div className="icon"></div>
+            <div className="description">
+              {weather.weather ? (
+                <p> {weather.weather[0].description}</p>
+              ) : null}
+            </div>
           </div>
         </div>
       </div>
-      <div className='extras'>
-        <div className='feels'></div>
-        <div className='humidity'></div>
-        <div className='wind'></div>
+      <div className="extras">
+        <div className="feels">
+          {weather.main ? <p> {weather.main.feels_like}</p> : null}
+        </div>
+        <div className="humidity">
+          {weather.main ? <p> {weather.main.humidity}</p> : null}
+        </div>
+        <div className="wind">
+          {weather.wind ? <p> {weather.wind.speed}</p> : null}
+        </div>
       </div>
     </div>
   );
