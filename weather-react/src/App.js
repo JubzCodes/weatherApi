@@ -1,6 +1,14 @@
+import React, { useState } from 'react';
+import axios from 'axios'
 import './App.css';
 
 function App() {
+  
+  const [weather, setWeather] = useState({});
+  const [location, setLocation] = useState('')
+  const api =`https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=0be1143e55cbb02debda50a86cce2e12`;
+
+
   return (
     <div className="App">
       <div className="search">
