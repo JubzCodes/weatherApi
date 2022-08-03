@@ -57,6 +57,24 @@
   text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
 }
 
+.text {
+  text-align: start;
+}
+
+.date {
+  font-size: 15px;
+  font-weight: 700;
+  color: rgb(73, 73, 73);
+}
+
+.location {
+  color: #FFF;
+  font-size: 70px;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+  align-self: flex-start;
+}
+
 .extras {
   text-align: center;
   display: flex;
